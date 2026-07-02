@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track Order</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    background:#f3f3f3;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#131921;
+    color:white;
+    padding:15px 30px;
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* MAIN LAYOUT */
+.container{
+    max-width:1200px;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+/* CARDS */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* PRODUCT */
+.product{
+    display:flex;
+    gap:15px;
+    align-items:center;
+}
+
+.product img{
+    width:90px;
+    border-radius:6px;
+}
+
+.price{
+    color:#b12704;
+    font-weight:bold;
+}
+
+/* STATUS */
+.badge{
+    display:inline-block;
+    padding:5px 10px;
+    background:#ff9900;
+    color:white;
+    border-radius:20px;
+    font-size:12px;
+}
+
+/* TRACK STEPS */
+.step{
+    display:flex;
+    gap:10px;
+    margin:15px 0;
+    align-items:flex-start;
+}
+
+.circle{
+    width:14px;
+    height:14px;
+    border-radius:50%;
+    background:#ccc;
+    margin-top:4px;
+}
+
+.step.completed .circle{
+    background:#28a745;
+}
+
+.step.active .circle{
+    background:#ff9900;
+}
+
+/* MAP */
+.map{
+    width:100%;
+    height:300px;
+    border-radius:8px;
+    overflow:hidden;
+    margin-top:10px;
+}
+
+iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+/* SIDE */
+.side .card{
+    margin-bottom:20px;
+}
+
+/* BUTTON */
+.btn{
+    width:100%;
+    padding:10px;
+    background:#ff9900;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:6px;
+}
+
+.btn:hover{
+    background:#e68a00;
+}
+
+
+.tracking-map{
+
+    width:90%;
+    max-width:1000px;
+    margin:50px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
+    text-align:center;
+
+}
+
+.tracking-map h2{
+
+    font-size:35px;
+    color:#2563eb;
+    margin-bottom:10px;
+
+}
+
+.tracking-map p{
+
+    font-size:18px;
+    color:#555;
+    margin-bottom:20px;
+
+}
+
+.tracking-map iframe{
+
+    width:100%;
+    height:350px;
+    border:none;
+    border-radius:15px;
+
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .container{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    Your Orders
+</div>
+
+<div class="container">
+
+    <!-- LEFT SIDE -->
+    <div>
+
+        <div class="card">
+
+            <h2>Order #A10293</h2>
+            <span class="badge">Out for Delivery</span>
+
+            <hr>
+
+            <!-- PRODUCT -->
+            <div class="product">
+                <img src="image copy 50.png">
+                <div>
+                    <h3>RJ Ava Rover Running Shoes</h3>
+                    <p class="price">₹2,899</p>
+                    <small>Return available till 10 July</small>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TRACKING -->
+        <div class="card">
+
+            <h3>Delivery Tracking</h3>
+
+            <div class="step completed">
+                <div class="circle"></div>
+                <div>
+                    <b>Order Confirmed</b><br>
+                    <small>26 June</small>
+                </div>
+            </div>
+
+            <div class="step completed">
+                <div class="circle"></div>
+                <div>
+                    <b>Shipped</b><br>
+                    <small>27 June</small>
+                </div>
+            </div>
+
+            <div class="step active">
+                <div class="circle"></div>
+                <div>
+                    <b>Out for Delivery</b><br>
+                    <small>Today</small>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="circle"></div>
+                <div>
+                    <b>Delivered</b><br>
+                    <small>Pending</small>
+                </div>
+            </div>
+
+        </div>
+
+        <section class="tracking-map">
+
+    <h2>📍 Track Your Delivery</h2>
+
+    <p>Your order is currently on the way.</p>
+
+    <iframe
+        src="https://www.google.com/maps?q=New+Delhi&output=embed"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+
+</section>
+
+        
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="side">
+
+        <div class="card">
+            <h3>Delivery Address</h3>
+            <p><b>Vikas Goyal</b></p>
+            <p>Panipat, Haryana</p>
+            <p>India - 132103</p>
+        </div>
+
+        <div class="card">
+            <h3>Expected Delivery</h3>
+            <p><b>28 June 2026</b></p>
+            <p>10 AM - 6 PM</p>
+        </div>
+
+        <button class="btn">Download Invoice</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

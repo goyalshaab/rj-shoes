@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StepUp Shoes</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <!-- ================= RJ SHOES LOGIN POPUP ================= -->
+
+<div id="loginPopup" class="login-popup">
+
+    <div class="login-container">
+
+        <!-- Left Panel -->
+
+        <div class="login-left">
+
+            <h1>RJ Shoes</h1>
+
+            <p>
+                Get access to your Orders,
+                Wishlist and Exclusive
+                Shoe Collections.
+            </p>
+
+            <img src="image.png" alt="RJ Shoes">
+
+        </div>
+
+        <!-- Right Panel -->
+
+        <div class="login-right">
+
+            <span class="close-btn" onclick="closeLogin()">&times;</span>
+
+            <input
+                type="text"
+                id="email"
+                placeholder="Enter Email / Mobile Number"
+            >
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter Password"
+            >
+
+            <p class="terms">
+                By continuing, you agree to RJ Shoes'
+                <a href="#">Terms of Use</a> and
+                <a href="#">Privacy Policy</a>.
+            </p>
+
+            <button onclick="loginUser()">
+                Login
+            </button>
+
+            <div class="or">
+
+                OR
+
+            </div>
+
+            <button class="google-btn">
+
+                Continue with Google
+
+            </button>
+
+            <div class="signup">
+
+                New to RJ Shoes?
+
+                <a href="create.html">Create an Account</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- ================= TOP BAR ================= -->
+
+    <div class="top-bar">
+
+        <div class="top-left">
+
+            FREE SHIPPING ON ORDERS ABOVE ₹999
+
+        </div>
+
+        <div class="top-right">
+
+            <a href="store.html">Store Locator</a>
+
+            <a href="./track-order.html">Track Order</a>
+
+            <a href="#">Help</a>
+
+        </div>
+
+    </div>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <div class="logo">
+
+            Step<span>Up</span>
+
+        </div>
+
+        <nav>
+
+            <ul>
+
+                <li><a href="./men.html">Men</a></li>
+
+                <li><a href="./women.html">Women</a></li>
+
+                
+
+                <li><a href="/running.html">Running</a></li>
+
+                <li><a href="./casual.html">Casual</a></li>
+
+                <li><a href=" arrivals.html">New Arrivals</a></li>
+
+                <li><a href="sale.html">Sale</a></li>
+
+            </ul>
+
+        </nav>
+
+        <div class="header-icons">
+
+            <div class="search-box">
+
+                <input type="text" placeholder="Search Shoes">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </div>
+
+            <i class="fa-regular fa-heart"></i>
+
+            <i class="fa-regular fa-user"></i>
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+        </div>
+
+    </header>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+    <div class="hero-slider">
+
+        <div class="slide">
+            <img src="image.png" alt="Banner 1">
+        </div>
+
+        <div class="slide">
+            <img src="image copy.png" alt="Banner 2">
+        </div>
+
+        <div class="slide">
+            <img src="image copy 2.png" alt="Banner 3">
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="categories">
+
+        <h2>Shop By Category</h2>
+
+        <div class="category-grid">
+
+            
+            <div class="category-card">
+
+                <img src="image copy 3.png">
+
+                <h3>Men</h3>
+
+            </div>
+
+            <div class="category-card">
+
+                <img src="image copy 4.png">
+
+                <h3>Women</h3>
+
+            </div>
+
+            <div class="category-card">
+
+                <img src="image copy 5.png">
+
+                <h3>Running</h3>
+
+            </div>
+
+            <div class="category-card">
+
+                <img src="image copy 6.png">
+
+                <h3>Casual</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FEATURED PRODUCTS ================= -->
+
+    <section class="featured">
+
+        <div class="title">
+
+            <h2>Featured Shoes</h2>
+
+            <a href="#">View All</a>
+
+        </div>
+
+        <div class="product-grid" id="products">
+
+            <!-- JS Products -->
+
+        </div>
+
+    </section>
+
+    <!-- ================= PROMO BANNER ================= -->
+
+    <section class="promo">
+
+        <div class="promo-content">
+
+            <h2>UP TO 50% OFF</h2>
+
+            <p>
+
+                Premium Sneakers & Running Collection
+
+            </p>
+
+            <button>
+
+                Explore Sale
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= NEWSLETTER ================= -->
+
+    <section class="newsletter">
+
+        <h2>Stay Updated</h2>
+
+        <p>
+
+            Subscribe for latest launches and offers.
+
+        </p>
+
+        <div class="newsletter-box">
+
+            <input type="email" placeholder="Enter your email">
+
+            <button>
+
+                Subscribe
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>About</h3>
+
+                <p>
+
+                    StepUp Shoes offers premium quality
+                    footwear for every lifestyle.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Quick Links</h3>
+                <a href="about-us.html">About us</a>
+                <a href="men.html">Men</a>
+
+                <a href="women.html">Women</a>
+
+                <a href="running.html">running</a>
+
+                <a href="sale.html">Sale</a>
+                <a href="casual.html">Casual</a>
+
+
+            </div>
+
+            <div>
+
+                <h3>Customer Care</h3>
+
+                <a href="contact.html">Contact Us</a>
+
+                <a href="return.html">Returns</a>
+
+                <a href="shipping.html">Shipping</a>
+
+                <a href="track-order.html">Track Order</a>
+
+            </div>
+
+            <div>
+
+                <h3>Follow Us</h3>
+
+                <i class="fa-brands fa-facebook"></i>
+
+                <i class="fa-brands fa-instagram"></i>
+
+                <i class="fa-brands fa-youtube"></i>
+
+                <i class="fa-brands fa-x-twitter"></i>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 StepUp Shoes. All Rights Reserved.| Developed By Vikas Goyal
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

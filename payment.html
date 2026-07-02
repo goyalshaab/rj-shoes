@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Payment | RJ Shoes</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#eef3fb;
+}
+
+.container{
+width:95%;
+max-width:1300px;
+margin:40px auto;
+}
+
+.heading{
+background:linear-gradient(135deg,#0f172a,#2563eb);
+color:#fff;
+padding:35px;
+border-radius:18px;
+text-align:center;
+margin-bottom:30px;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.heading h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+.heading p{
+font-size:18px;
+}
+
+.checkout{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:30px;
+}
+
+.left,
+.right{
+background:#fff;
+border-radius:18px;
+padding:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.section-title{
+font-size:28px;
+margin-bottom:25px;
+color:#222;
+}
+
+.payment-method{
+border:2px solid #ddd;
+border-radius:12px;
+padding:18px;
+margin-bottom:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+.payment-method:hover{
+border-color:#2563eb;
+background:#f3f8ff;
+}
+
+.payment-method input{
+margin-right:10px;
+}
+
+.method-content{
+margin-top:20px;
+display:none;
+}
+
+.method-content.active{
+display:block;
+}
+
+input,
+select{
+width:100%;
+padding:15px;
+margin-bottom:15px;
+border:1px solid #ccc;
+border-radius:10px;
+font-size:16px;
+outline:none;
+}
+
+input:focus{
+border-color:#2563eb;
+}
+
+.row{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.order-box{
+background:#f8f8f8;
+padding:20px;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.order-box p{
+display:flex;
+justify-content:space-between;
+margin:12px 0;
+font-size:17px;
+}
+
+.total{
+font-size:24px;
+font-weight:bold;
+color:#2563eb;
+}
+
+.coupon{
+display:flex;
+gap:10px;
+margin:20px 0;
+}
+
+.coupon input{
+flex:1;
+margin:0;
+}
+
+.coupon button{
+padding:15px 20px;
+border:none;
+background:#2563eb;
+color:#fff;
+border-radius:10px;
+cursor:pointer;
+}
+
+.secure{
+background:#e8f5e9;
+padding:15px;
+border-radius:10px;
+text-align:center;
+color:#2e7d32;
+font-weight:bold;
+margin-top:20px;
+}
+
+.pay-btn{
+width:100%;
+padding:18px;
+background:linear-gradient(135deg,#2563eb,#0f172a);
+color:#fff;
+font-size:20px;
+font-weight:bold;
+border:none;
+border-radius:12px;
+cursor:pointer;
+margin-top:25px;
+transition:.3s;
+}
+
+.pay-btn:hover{
+transform:scale(1.03);
+}
+
+.success{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+display:none;
+justify-content:center;
+align-items:center;
+}
+
+.success-box{
+background:#fff;
+padding:40px;
+border-radius:20px;
+text-align:center;
+width:400px;
+}
+
+.success-box i{
+font-size:70px;
+color:green;
+margin-bottom:20px;
+}
+
+.success-box h2{
+margin-bottom:10px;
+}
+
+.success-box button{
+margin-top:20px;
+padding:14px 25px;
+background:#2563eb;
+color:#fff;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+.checkout{
+grid-template-columns:1fr;
+}
+
+.row{
+grid-template-columns:1fr;
+}
+
+.heading h1{
+font-size:30px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="heading">
+
+<h1>Secure Checkout</h1>
+
+<p>100% Safe & Secure Payment</p>
+
+</div>
+
+<div class="checkout">
+
+<div class="left">
+
+<h2 class="section-title">Choose Payment Method</h2>
+
+<div class="payment-method">
+
+<label>
+
+<input type="radio" name="payment" checked onclick="showMethod('card')">
+
+💳 Credit / Debit Card
+
+</label>
+
+<div id="card" class="method-content active">
+
+<input type="text" placeholder="Card Holder Name">
+
+<input type="text" placeholder="Card Number">
+
+<div class="row">
+
+<input type="month">
+
+<input type="password" placeholder="CVV">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="payment-method">
+
+<label>
+
+<input type="radio" name="payment" onclick="showMethod('upi')">
+
+📱 UPI Payment
+
+</label>
+
+<div id="upi" class="method-content">
+
+<input type="text" placeholder="Enter UPI ID">
+
+</div>
+
+</div>
+
+<div class="payment-method">
+
+<label>
+
+<input type="radio" name="payment" onclick="showMethod('cod')">
+
+💵 Cash on Delivery
+
+</label>
+
+<div id="cod" class="method-content">
+
+<p>Pay cash when your order is delivered.</p>
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="right">
+
+<h2 class="section-title">Order Summary</h2>
+
+<div class="order-box">
+
+<p>
+<span>Subtotal</span>
+<span>₹4,499</span>
+</p>
+
+<p>
+<span>Shipping</span>
+<span>FREE</span>
+</p>
+
+<p>
+<span>Discount</span>
+<span>-₹500</span>
+</p>
+
+<hr style="margin:15px 0;">
+
+<p class="total">
+<span>Total</span>
+<span id="totalPrice">₹3,999</span>
+</p>
+
+</div>
+
+<div class="coupon">
+
+<input type="text"
+id="couponCode"
+placeholder="Enter Coupon Code">
+
+<button onclick="applyCoupon()">
+Apply
+</button>
+
+</div>
+
+<div class="secure">
+
+🔒 100% Secure Payment Gateway
+
+</div>
+
+<button class="pay-btn"
+onclick="placeOrder()">
+
+Pay Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SUCCESS POPUP -->
+
+<div class="success" id="successBox">
+
+<div class="success-box">
+
+<i class="fas fa-check-circle"></i>
+
+<h2>Payment Successful!</h2>
+
+<p>
+
+Thank you for shopping with <b>RJ Shoes</b>.
+
+</p>
+
+<p>
+
+Your Order ID:
+<b>#RJ2026001</b>
+
+</p>
+
+<button onclick="goHome()">
+
+Continue Shopping
+
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+
+
+function showMethod(id){
+
+document.querySelectorAll(".method-content").forEach(box=>{
+box.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+
+}
+
+function applyCoupon(){
+
+let coupon=document.getElementById("couponCode").value.trim().toUpperCase();
+
+if(coupon==="RJ100"){
+
+document.getElementById("totalPrice").innerHTML="₹3,899";
+
+alert("🎉 Coupon Applied Successfully!");
+
+}
+
+else if(coupon==="RJ500"){
+
+document.getElementById("totalPrice").innerHTML="₹3,499";
+
+alert("🎉 ₹500 Discount Applied!");
+
+}
+
+else{
+
+alert("❌ Invalid Coupon Code");
+
+}
+
+}
+
+function placeOrder(){
+
+let card=document.querySelector("#card input:nth-child(2)");
+
+let upi=document.querySelector("#upi input");
+
+let cardSelected=document.querySelector('input[name="payment"]:checked').parentElement.innerText;
+
+if(cardSelected.includes("Credit") || cardSelected.includes("Debit")){
+
+if(card.value.length<16){
+
+alert("Please enter a valid 16-digit card number.");
+
+return;
+
+}
+
+}
+
+if(cardSelected.includes("UPI")){
+
+if(upi.value==""){
+
+alert("Please enter your UPI ID.");
+
+return;
+
+}
+
+}
+
+document.getElementById("successBox").style.display="flex";
+
+}
+
+function goHome(){
+
+window.location.href="index.html";
+
+}
+
+</script>
+</body>
+</html>

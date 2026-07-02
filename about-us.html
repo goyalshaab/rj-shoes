@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About RJ Shoes</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f5f6fa;
+}
+
+/* HERO */
+.hero{
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb") center/cover;
+    color:white;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin:0;
+}
+
+.hero p{
+    max-width:700px;
+    margin:15px auto;
+    font-size:16px;
+    opacity:0.9;
+}
+
+/* SECTION */
+.section{
+    max-width:1100px;
+    margin:50px auto;
+    padding:0 20px;
+}
+
+.section h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* CARDS */
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    text-align:center;
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:#111;
+}
+
+.card p{
+    font-size:14px;
+    color:#555;
+}
+
+
+.company-started-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.started-box {
+    max-width: 800px;
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.started-box h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.started-box p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+
+
+.about-us-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+}
+
+.about-box {
+    max-width: 850px;
+    background: white;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.about-box h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.about-box p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+
+
+
+/* Main section */
+.story-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Container */
+.story-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Card design */
+.story-card {
+    width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Heading */
+.story-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+/* Paragraph */
+.story-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+.about-us-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    gap: 30px;   /* ✅ THIS ADDS SPACE BETWEEN BOXES */
+}
+
+
+
+.owner-section {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;   /* responsive */
+    padding: 40px;
+    background: #f5f5f5;
+}
+
+/* both cards */
+.owner-card {
+    width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* heading */
+.owner-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+/* paragraph */
+.owner-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 12px;
+}
+
+/* mobile view */
+@media (max-width: 768px) {
+    .owner-card {
+        width: 100%;
+    }
+}
+
+
+.owner-img {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+
+/* STATS */
+.stats{
+    background:#111;
+    color:white;
+    padding:60px 20px;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    text-align:center;
+    gap:20px;
+}
+
+.stats h3{
+    font-size:30px;
+    margin:0;
+    color:#ff9900;
+}
+
+/* TEAM */
+.team img{
+    width:100%;
+    border-radius:10px;
+}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    background:#111;
+    color:white;
+    margin-top:40px;
+}
+</style>
+
+</head>
+
+<body>
+<video src="videos.mp4" height="555" width="1500" controls loop></video>
+
+
+
+
+
+
+<section class="about-us-section">
+
+    <div class="about-box">
+
+    <h2>About Us</h2>
+
+    <p>
+        RJ Shoes is a premium footwear brand focused on delivering comfort, durability, and modern style. 
+        We design shoes for runners, athletes, and lifestyle users who need both performance and fashion in their daily life.
+    </p>
+
+    <p>
+        Our mission is to create high-quality footwear that enhances confidence and supports every step of your journey, 
+        whether you are running, working out, or using them for everyday wear.
+    </p>
+
+    <p>
+        We carefully use advanced materials and modern technology to ensure long-lasting comfort, lightweight feel, 
+        and strong grip that performs well on different surfaces and conditions.
+    </p>
+
+    <p>
+        Every design goes through strict quality testing to make sure our customers receive only the best products 
+        in terms of durability, comfort, and style.
+    </p>
+
+    <p>
+        RJ Shoes also focuses on innovation and continuous improvement, upgrading designs based on customer feedback 
+        and latest fashion trends.
+    </p>
+
+
+    <p>
+        We are committed to building long-term trust with our customers by maintaining transparency, quality standards, 
+        and reliable service in every order we deliver.
+    </p>
+
+    <p>
+        Our goal is not just to sell footwear, but to create a brand experience that reflects confidence.
+    </p>
+
+    <p>
+        RJ Shoes continues to grow as a trusted brand with thousands of happy customers, always committed to quality, 
+        innovation, and complete customer satisfaction.
+    </p>
+
+</div>
+
+
+
+    <div class="about-box">
+      
+    <h2>Company Started In 2020</h2>
+
+    <p>
+        RJ Shoes Company was started in 2020 with a vision to create high-quality footwear 
+        that combines comfort, durability, and modern fashion for everyone.
+    </p>
+
+    <p>
+        It began as a small workshop driven by passion, dedication, and a strong belief 
+        in delivering footwear that improves everyday lifestyle and performance.
+    </p>
+
+    <p>
+        In the early days, the focus was only on quality craftsmanship and customer satisfaction, 
+        which helped the brand slowly build trust in the market.
+    </p>
+
+    <p>
+        Over time, the brand grew with strong customer support and became known for 
+        its innovation, affordable pricing, and long-lasting product quality.
+    </p>
+
+    <p>
+        With continuous improvement and modern technology, RJ Shoes expanded its product range 
+        to meet the needs of athletes, runners, and daily wear users.
+    </p>
+
+    <p>
+        Today, RJ Shoes is expanding globally while maintaining its core values of comfort, 
+        trust, innovation, and customer satisfaction.
+    </p>
+
+</div>   
+
+    
+</div>
+
+
+</section>
+
+
+
+<section class="story-section">
+
+    <div class="story-container">
+
+        <!-- Our Story Card -->
+        <div class="story-card">
+            <h2>Our Story</h2>
+
+            <p>
+                RJ Shoes began with a simple vision — to create footwear that combines comfort, durability, and modern style for everyone.
+            </p>
+
+            <p>
+                From a small workshop, our journey started with passion, hard work, and a strong belief in quality craftsmanship.
+            </p>
+
+            <p>
+                Over time, we learned, improved, and grew into a trusted brand loved by thousands of customers.
+            </p>
+
+            <p>
+                Today, RJ Shoes continues to innovate and expand globally while staying true to its original mission.
+            </p>
+        </div>
+
+        <!-- Extra Story Highlights Card -->
+        <div class="story-card">
+            <h2>Journey Highlights</h2>
+
+            <p>
+                ✔ Started in 2020 with a small team  
+            </p>
+
+            <p>
+                ✔ Focus on comfort, performance, and style  
+            </p>
+
+            <p>
+                ✔ Expanded into sports and lifestyle footwear  
+            </p>
+
+            <p>
+                ✔ Trusted by thousands of happy customers  
+            </p>
+
+            <p>
+                ✔ Growing brand with global reach vision  
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="owner-section">
+<div class="owner-card">
+
+    <h2>About Owner</h2>
+    <img src="sumit.jpeg" alt="Owner Photo" class="owner-img">
+
+    <p>
+        RJ Shoes was founded by a passionate entrepreneur with a vision to create footwear that combines comfort, durability, and modern style for everyone.
+    </p>
+
+    <p>
+        The founder started this journey in 2020 with a small workshop and a strong belief in quality craftsmanship and customer satisfaction.
+    </p>
+
+    <p>
+        With dedication and continuous hard work, the brand slowly grew into a trusted footwear company known for its innovation and affordable premium products.
+    </p>
+
+    <p>
+        The owner believes that shoes are not just fashion items, but a part of confidence, lifestyle, and personality for every individual.
+    </p>
+
+    <p>
+        Today, the leadership continues to guide RJ Shoes with a focus on quality, innovation, and long-term customer trust.
+    </p>
+
+</div>
+
+
+
+
+<div class="owner-card">
+
+    <h2>About Team</h2>
+     <img src="image copy 63.png" alt="Owner Photo" class="team-img">
+    <p>
+        The RJ Shoes team is a group of passionate designers, developers, and quality experts who work together to build premium footwear.
+    </p>
+
+    <p>
+        Our design team focuses on creating modern, stylish, and comfortable shoes that match current fashion trends and customer needs.
+    </p>
+
+    <p>
+        The production and quality control team ensures every product meets high standards of durability, comfort, and performance.
+    </p>
+
+    <p>
+        Our marketing and support team works closely with customers to understand their needs and provide the best shopping experience.
+    </p>
+
+    <p>
+        Together, the RJ Shoes team shares one goal — to deliver trust, quality, and satisfaction in every step our customers take.
+    </p>
+
+</div>
+</section>
+
+
+<!-- STATS -->
+<div class="stats">
+    <div class="section">
+        <div class="stats-grid">
+            <div>
+                <h3>50K+</h3>
+                <p>Happy Customers</p>
+            </div>
+            <div>
+                <h3>120+</h3>
+                <p>Products</p>
+            </div>
+            <div>
+                <h3>15+</h3>
+                <p>Cities Covered</p>
+            </div>
+            <div>
+                <h3>4.8★</h3>
+                <p>Customer Rating</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MISSION -->
+<div class="section">
+    <h2>Our Mission & Vision</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Mission</h3>
+            <p>To provide high-quality, affordable, and stylish footwear for every age group.</p>
+        </div>
+
+        <div class="card">
+            <h3>Vision</h3>
+            <p>To become one of the most trusted footwear brands in India and beyond.</p>
+        </div>
+
+        <div class="card">
+            <h3>Innovation</h3>
+            <p>We constantly improve our designs using modern technology and customer feedback.</p>
+        </div>
+    </div>
+</div>
+
+<!-- TEAM -->
+<div class="section">
+    <h2>Our Team</h2>
+
+    <div class="grid team">
+        <div class="card">
+            <img src="sumit.jpeg">
+            <h3>Founder</h3>
+            <p>RJ Shoes Leadership</p>
+        </div>
+
+        <div class="card">
+            <img src="WhatsApp Image 2026-05-27 at 11.39.34 AM.jpeg">
+            <h3>Design Team</h3>
+            <p>Creative Footwear Designers</p>
+        </div>
+
+        <div class="card">
+            <img src="image copy 63.png">
+            <h3>Quality Team</h3>
+            <p>Product Testing & QC</p>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 RJ Shoes Company | Designed with ❤️
+</div>
+
+</body>
+</html>

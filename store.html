@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RJ Shoes | Store Locator</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+/* Hero */
+
+.hero{
+height:350px;
+background:url("store-banner.jpg") center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+}
+
+.hero-content{
+position:relative;
+color:#fff;
+text-align:center;
+z-index:2;
+}
+
+.hero-content h1{
+font-size:52px;
+margin-bottom:10px;
+}
+
+.hero-content p{
+font-size:20px;
+}
+
+/* Search */
+
+.search-box{
+max-width:900px;
+margin:-40px auto 50px;
+background:#fff;
+padding:25px;
+border-radius:15px;
+display:flex;
+gap:20px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+position:relative;
+z-index:5;
+}
+
+.search-box input{
+flex:1;
+padding:16px;
+font-size:17px;
+border:1px solid #ddd;
+border-radius:8px;
+outline:none;
+}
+
+.search-box button{
+padding:16px 40px;
+background:#000;
+color:#fff;
+border:none;
+border-radius:8px;
+font-size:17px;
+cursor:pointer;
+transition:.3s;
+}
+
+.search-box button:hover{
+background:#ff4d00;
+}
+
+/* Heading */
+
+.heading{
+text-align:center;
+font-size:40px;
+margin-bottom:40px;
+}
+
+/* Store Grid */
+
+.store-container{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+padding-bottom:80px;
+}
+
+/* Card */
+
+.store-card{
+background:#fff;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+transition:.4s;
+}
+
+.store-card:hover{
+transform:translateY(-10px);
+}
+
+.store-card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.store-info{
+padding:25px;
+}
+
+.store-info h2{
+margin-bottom:15px;
+color:#222;
+}
+
+.store-info p{
+margin:10px 0;
+color:#555;
+line-height:1.7;
+}
+
+.store-info span{
+font-weight:bold;
+color:#000;
+}
+
+.buttons{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+
+.buttons a{
+flex:1;
+text-align:center;
+padding:13px;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
+transition:.3s;
+}
+
+.call{
+background:#eee;
+color:#000;
+}
+
+.call:hover{
+background:#ddd;
+}
+
+.direction{
+background:#000;
+color:#fff;
+}
+
+.direction:hover{
+background:#ff4d00;
+}
+
+/* Footer */
+
+footer{
+background:#111;
+color:#fff;
+text-align:center;
+padding:30px;
+margin-top:30px;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.hero-content h1{
+font-size:35px;
+}
+
+.search-box{
+flex-direction:column;
+}
+
+.heading{
+font-size:32px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Find Our Stores</h1>
+
+<p>Locate the nearest RJ Shoes Store near you.</p>
+
+</div>
+
+</section>
+
+<!-- Search -->
+
+<div class="search-box">
+
+<input type="text" placeholder="Enter City or Pincode">
+
+<button>Search</button>
+
+</div>
+
+<h1 class="heading">Our Stores</h1>
+
+<!-- Stores -->
+
+<div class="store-container">
+
+<div class="store-card">
+
+<img src="image copy.png">
+
+<div class="store-info">
+
+<h2>RJ Shoes - Delhi</h2>
+
+<p><span>📍 Address:</span><br>
+Connaught Place, New Delhi</p>
+
+<p><span>📞 Phone:</span><br>
++91 9876543210</p>
+
+<p><span>🕒 Hours:</span><br>
+10:00 AM - 9:30 PM</p>
+
+<div class="buttons">
+
+<a href="#" class="call">Call</a>
+
+<a href="#" class="direction">Get Directions</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="store-card">
+
+<img src="image copy.png">
+
+<div class="store-info">
+
+<h2>RJ Shoes - Mumbai</h2>
+
+<p><span>📍 Address:</span><br>
+Phoenix Mall, Mumbai</p>
+
+<p><span>📞 Phone:</span><br>
++91 9898989898</p>
+
+<p><span>🕒 Hours:</span><br>
+10:30 AM - 10:00 PM</p>
+
+<div class="buttons">
+
+<a href="#" class="call">Call</a>
+
+<a href="#" class="direction">Get Directions</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="store-card">
+
+<img src="image.png">
+
+<div class="store-info">
+
+<h2>RJ Shoes - Bengaluru</h2>
+
+<p><span>📍 Address:</span><br>
+MG Road, Bengaluru</p>
+
+<p><span>📞 Phone:</span><br>
++91 9874512365</p>
+
+<p><span>🕒 Hours:</span><br>
+11:00 AM - 9:00 PM</p>
+
+<div class="buttons">
+
+<a href="#" class="call">Call</a>
+
+<a href="#" class="direction">Get Directions</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="store-card">
+
+<img src="image copy 2.png">
+
+<div class="store-info">
+
+<h2>RJ Shoes - Chandigarh</h2>
+
+<p><span>📍 Address:</span><br>
+Sector 17 Plaza, Chandigarh</p>
+
+<p><span>📞 Phone:</span><br>
++91 9784563210</p>
+
+<p><span>🕒 Hours:</span><br>
+10:00 AM - 9:00 PM</p>
+
+<div class="buttons">
+
+<a href="#" class="call">Call</a>
+
+<a href="#" class="direction">Get Directions</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+<h3>RJ Shoes Store Locator</h3>
+
+<p>Find your nearest RJ Shoes showroom across India.</p>
+
+</footer>
+
+</body>
+</html>
